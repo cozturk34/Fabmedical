@@ -4,6 +4,9 @@ WORKDIR /usr/src/app
 FROM node:argon AS build
 WORKDIR /usr/src/app
 
+ENV CONTENT_API_URL http://localhost:3001
+EXPOSE 3000
+
 # Install app dependencies
 COPY package.json /usr/src/app/
 RUN npm install
